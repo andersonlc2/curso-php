@@ -56,6 +56,44 @@
 
          ksort($n); // Ordena por índices cres;
          krsort($n); // Ordena por índices desc;
+
+         // Diferença entre arrays
+         $lista = ["Pedro", "Paulo", "Jose", "Francisca", "Paula", "Joao"];
+         $aprovados = ["Pedro", "Francisca", "Joao"];
+         $reprovados = array_diff($lista, $aprovados);
+         var_dump($reprovados);
+
+         // Filtra um valor no array
+         $numeros = [10, 20, 24, 91, 18];
+         $filtrados = array_filter($numeros, function($item) {
+            if ($item <= 20) {
+              return true;
+            }
+            else {
+              return false;
+            }
+         });
+         print_r($filtrados);
+
+         // Executa um procedimento nos itens do array
+         $dobrados = array_map(function($item) {
+            return $item * 2;
+         }, $numeros);
+         print_r($dobrados);
+
+         // Busca valor dentro do array e retorna um bool
+         if (in_array(91, $numeros)) {
+            echo "<p>Existe</p>";
+         }
+         else {
+           echo "<p>Não existe</p>";
+         }
+
+         // Retorna o index do valor no array
+         $pos = array_search(91, $numeros);
+         echo $pos;
+
+         
        ?>
      
      </pre>
